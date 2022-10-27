@@ -11,5 +11,6 @@ public class calculateNcr {
         int n = sc.nextInt();
         int r = sc.nextInt();
         System.out.println(nCr(n,r));
+        sc.close();
     }
  }
