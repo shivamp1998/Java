@@ -26,5 +26,6 @@ public class AddTwoNumbers {
         char grade = sc.next().charAt(0);
 		int total = totalSalary(basic,grade);
         System.out.println(total);
+        sc.close();
 	}
 }
