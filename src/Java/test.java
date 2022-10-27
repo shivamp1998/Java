@@ -1,16 +1,15 @@
 package Java;
+
 public class test {
-    public static boolean isPrime(int x)
-    {
-        for(int i=2;i<x/2;i++)
-        {
-            if(x%i==0)
-            return false;
-        }
-        return true;
-    
-    }
-    public static void main (String[] args) {
-        System.out.print(isPrime(47));
-    }
+  public static int sum(int [] arr)
+  {
+      int arrsum=0;
+      for(int i=0;i<5;i++)
+      arrsum+=arr[i];
+      return arrsum;
+  }
+  public static void main (String[] args) {
+  int arr[]={1,2,3,4,5,6,7,8};
+  System.out.print(sum(arr));
+  }
 }
