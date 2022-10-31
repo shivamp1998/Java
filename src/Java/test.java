@@ -7,6 +7,7 @@ public class test {
     {
         arr[i][0]=2;
     }
+    System.out.println(arr[0][0]);
     System.out.print(arr[3][0]);
 }
 }
