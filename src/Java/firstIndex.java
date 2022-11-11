@@ -15,6 +15,15 @@ public class firstIndex {
         if(fn == -1) return -1;
         else return fn+1;
     }
+    public static int lastIndex(int[] arr, int x, int ans, int index) {
+        if(index == arr.length) {
+            return ans;
+        }
+        if(arr[index] == x) {
+            ans = index;
+        }
+        return lastIndex(arr,x,ans,index+1);
+    }
     public static void main(String ...args) {
         int arr[] = {1,2,4,3,5};
         System.out.println(findIndex(arr,4));
