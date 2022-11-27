@@ -27,6 +27,7 @@ public class Polynomial {
         for(int i=0; i<p.poly.length; i++) {
             add.poly[i] = this.poly[i] + p.poly[i];
         }
+		System.out.println(add);
         return add;
 	}
 	
