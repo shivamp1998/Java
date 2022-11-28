@@ -1,20 +1,21 @@
 package Java;
-class Test 
-{
-    static int a = 10; 
-    int b = 20; 
-    static void fun1() 
-    { 
-        a = 20;                             //Line 1
-    } 
-    void fun2() 
-    {     
-        System.out.println("from m2"); 
+class Vehicle{
+    void print(){
+    System.out.print("Vehicle class");
     }
 }
-class MCQ{    
-    public static void main(String[] args) 
-    { 
-        Test.fun1(); 
-    } 
-} 
+class Car extends Vehicle{
+    void print(){
+    System.out.print("Car class ");
+    }
+}
+
+public class test {
+    public static void main(String[] args){   
+    Vehicle obj1 = new Car();
+    obj1.print();
+
+    Vehicle obj2 = new Vehicle();
+    obj2.print();  
+    }
+}
