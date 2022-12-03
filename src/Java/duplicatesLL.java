@@ -3,12 +3,12 @@ package Java;
 public class duplicatesLL {
     public static LinkedListNode<Integer> removeDuplicates(LinkedListNode<Integer> head) {
         LinkedListNode<Integer> curr = head;
-        while(curr != null) {
-            LinkedListNode<Integer> temp = curr;
-            while(temp != null && temp.data ==  curr.data) {
-                temp = temp.next;
+        while(curr != null && curr.next != null) {
+            if(curr.data == curr.next.data) {
+                curr.next = curr.next.next;
+            }else{
+                curr = curr.next;
             }
-            curr.next = temp;
         }
         return head;
     }
