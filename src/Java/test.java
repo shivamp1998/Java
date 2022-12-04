@@ -10,6 +10,8 @@ class test {
       list.add( "Car" );
       list.add( "Door" );
       list.add( "Euro" );
+      list.add("Eurasia");
+      list.add("Asia");
 
       list.set(2,"Bus");
       for(int i=0; i<list.size(); i++) {
