@@ -8,13 +8,19 @@ public class stack {
         this.data = new int [10];
         topIndex = -1;
     }
-
+    public int[] doubleCapacity() {
+        int [] newCapacity = new int [this.data.length * 2];
+        for(int i=0; i<this.data.length; i++) {
+            newCapacity[i] = this.data[i];
+        }
+        return newCapacity;
+    }
     public void push(int data) {
         if(topIndex < this.data.length) {
             topIndex++;
             this.data[topIndex] = data;
         }else{
-            System.out.println(" stack overflow ");
+            this.data = doubleCapacity();
         }
     }
 
