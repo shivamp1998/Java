@@ -1,22 +1,15 @@
 package Java;
-
-import java.util.ArrayList;
-
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 class test {
-   public static void main(String[] args) {
-      ArrayList<String> list = new ArrayList<String>() ;
-      list.add( "Ant" );
-      list.add( "Bat" );
-      list.add( "Car" );
-      list.add( "Door" );
-      list.add( "Euro" );
-      list.add("Eurasia");
-      list.add("Asia");
-
-      list.set(2,"Bus");
-      for(int i=0; i<list.size(); i++) {
-         System.out.print(list.get(i));
-      }
-   }
-   
+    public static void main (String[] args) {
+        Queue<Integer> q=new LinkedList<Integer>();
+        Stack<Integer> s=new Stack<Integer>();
+        q.add(5);
+        q.add(10);
+        s.push(10);
+        s.push(20);
+        System.out.print(q.peek()+s.pop());
+    }
 }
