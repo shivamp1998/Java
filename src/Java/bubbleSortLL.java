@@ -13,7 +13,6 @@ public class bubbleSortLL {
             while(curr!=null) {
                 next = curr.next;
                 if(curr.data > next.data) {
-                    swap(curr,next);
                 }
             }
         }
