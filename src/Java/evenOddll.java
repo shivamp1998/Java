@@ -2,12 +2,11 @@ package Java;
 
 public class evenOddll {
     public static LinkedListNode<Integer> evenAfterOdd(LinkedListNode<Integer> head) {
-		LinkedListNode<Integer> evenStart = null , evenEnd = null;
+		LinkedListNode<Integer> evenEnd = null;
         LinkedListNode<Integer> oddStart = null, oddEnd = null;
         while(head!=null) {
             if(head.data % 2 == 0 ) {
                 if(evenEnd == null) {
-                    evenStart = head;
                     evenEnd = head;
                 }else{
                     LinkedListNode<Integer> temp = new LinkedListNode<>(head.data);

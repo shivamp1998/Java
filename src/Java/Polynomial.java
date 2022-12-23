@@ -1,5 +1,4 @@
 package Java;
-import java.util.Scanner;
 public class Polynomial {
 
 	public int poly[] = new int [200];
@@ -22,6 +21,10 @@ public class Polynomial {
 
 	
 	// Adds two polynomials and returns a new polynomial which has result
+	/**
+	 * @param p
+	 * @return
+	 */
 	public Polynomial add(Polynomial p){
         Polynomial add = new Polynomial();
         for(int i=0; i<p.poly.length; i++) {

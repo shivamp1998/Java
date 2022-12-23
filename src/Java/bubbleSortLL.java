@@ -1,8 +1,12 @@
 package Java;
 
 public class bubbleSortLL {
+    /**
+     * @param head
+     * @param t1
+     * @param t2
+     */
     public static void swap(Node head, Node t1, Node t2) {
-        Node prev1 = null, curr1 = head;
         
     }
     public static Node sort(Node head) {
