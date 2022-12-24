@@ -1,5 +1,6 @@
 package Java;
 
+import java.util.*;
 public class BinaryTreeUse {
 
     public static void print(BinaryTreeNode<Integer> root) {
@@ -8,6 +9,23 @@ public class BinaryTreeUse {
             print(root.left);
             print(root.right);
         }
+    }
+    public static int NumberOfLeafs(BinaryTreeNode<Integer> root) {
+        if(root == null) return 0;
+        if(root.left == null && root.right == null) return 1;
+        return NumberOfLeafs(root.left) + NumberOfLeafs(root.right);
+    }
+
+    public static BinaryTreeNode<Integer>  takeInput() {
+        Scanner sc = new Scanner(System.in);
+        int data = sc.nextInt();
+        if(data == -1) return null;
+        BinaryTreeNode<Integer> rootData = new BinaryTreeNode<Integer>(data);
+        BinaryTreeNode<Integer> left = takeInput();
+        BinaryTreeNode<Integer> right = takeInput();
+        rootData.left = left;
+        rootData.right = right;
+        return rootData;
     }
     public static void main(String...args) {
         BinaryTreeNode<Integer> root  = new BinaryTreeNode<>(1);
@@ -22,3 +40,4 @@ public class BinaryTreeUse {
         print(root);     
     }
 }
+ 
