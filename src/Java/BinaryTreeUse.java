@@ -73,9 +73,8 @@ public class BinaryTreeUse {
             count++;
         }
 
-        root.left = helper()
         
-
+        return null;
     }   
 
     public static BinaryTreeNode<Integer> buildTree(int[] preOrder, int[] inOrder) {
