@@ -104,6 +104,30 @@ public class BinaryTreeUse {
         return root;
     }
 
+    public static void printLevelWise(BinaryTreeNode<Integer> root) {
+		if(root == null) return;
+        Queue<BinaryTreeNode<Integer>> q = new LinkedList<BinaryTreeNode<Integer>>();
+        q.add(root);
+        System.out.println(root.data);
+        while(!q.isEmpty()) {
+            int size = q.size();
+            while(size > 0) {
+                BinaryTreeNode<Integer> front = q.poll();
+                if(front.left != null) {
+                    System.out.print(front.left.data + " ");
+                    q.add(front.left);
+                }
+                if(front.right != null) {
+                    System.out.print(front.right.data + " ");
+                    q.add(front.right);  
+                }
+                size--; 
+            }
+            System.out.println();
+        }
+		
+	}
+
 
     public static BinaryTreeNode<Integer> takeInputBad() {
         Scanner sc = new Scanner(System.in);
@@ -131,6 +155,6 @@ public class BinaryTreeUse {
         // print(root);
 
         BinaryTreeNode<Integer> root = takeInput();
-        print(root);
+        printLevelWise(root);
     }
 }
