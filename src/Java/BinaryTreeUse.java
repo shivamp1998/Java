@@ -58,6 +58,24 @@ public class BinaryTreeUse {
 
     }
 
+    public static BinaryTreeNode<Integer> postHelper(int postOrder[], int [] inOrder, int i, int j, int k, int l) {
+        if(i > j) return null;
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(postOrder[j]); 
+        int inStartLeft = 0, inStartRight = 0;
+        int inEndLeft = 0, inEndRight = 0;
+        int postStartLeft = 0 , postStartRight = 0;
+        int postEndLeft = 0, postEndRight = 0;
+        root.left = postHelper(postOrder, inOrder, postStartLeft, postEndLeft, inStartLeft, inEndLeft);
+        root.right = postHelper(postOrder, inOrder, postStartRight, postEndRight, inStartRight, inEndRight);
+
+        return null;
+    }
+
+    public static BinaryTreeNode<Integer> buildTreePost(int[] postOrder, int[] inOrder) {
+		//Your code goes here
+        return null;
+	}
+
     public static BinaryTreeNode<Integer> helper(int[] preOrder, int[] inOrder, int i, int j, int start) {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(preOrder[start]);
         if(i > j) {
