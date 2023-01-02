@@ -1,8 +1,37 @@
 package Java;
 import java.util.*;
-
-
+class toLinkedlist {
+    Node head;
+    Node tail;
+}
 public class BSTUse {
+
+    public static toLinkedlist bstToLL(BinaryTreeNode<Integer> root) {
+        if(root == null) {
+            return new toLinkedlist();
+        }
+        Node newhead = new Node(root.data);
+        toLinkedlist left = bstToLL(root.left);
+        toLinkedlist right = bstToLL(root.right);
+
+        if(left.tail != null) {
+            left.tail.next = newhead;
+        }
+        newhead.next = right.head;
+        toLinkedlist data = new toLinkedlist();
+        if(left.head == null) {
+            data.head = newhead;
+        }else{
+            data.head = left.head;
+        }
+
+        if(right.tail == null) {
+            data.tail = right.tail;
+        }else{
+            data.tail = newhead;
+        }
+        return data;
+    }
     public static BinaryTreeNode<Integer> takeInput() {
         Queue<BinaryTreeNode<Integer>> q = new LinkedList<BinaryTreeNode<Integer>>();
         Scanner sc = new Scanner(System.in);
@@ -43,6 +72,8 @@ public class BSTUse {
         BinaryTreeNode<Integer> root = sortedArrayHelper(arr, n, 0, arr.length-1);
         return root;
     }
+
+
 
     public static isBstReturn isBstImprovved(BinaryTreeNode<Integer> root) {
         if(root == null) {
