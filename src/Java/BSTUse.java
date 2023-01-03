@@ -5,6 +5,25 @@ class toLinkedlist {
     Node tail;
 }
 public class BSTUse {
+    
+    public static BinaryTreeNode<Integer> Lca(BinaryTreeNode<Integer> root, int a, int b) {
+        if(root == null || root.data == a || root.data == b) return root;
+        if(root.data < a && root.data < b) {
+            return Lca(root.right, a , b);
+        }else if(root.data > a && root.data > b) {
+            return Lca(root.left, a ,b);
+        } 
+        BinaryTreeNode<Integer> left = Lca(root.right, a ,b);
+        BinaryTreeNode<Integer> right = Lca(root.left, a, b);
+        if(right == null) return left;
+        return right;
+    }
+    public static int getLCA(BinaryTreeNode<Integer> root, int a, int b) {
+		BinaryTreeNode<Integer> ans = Lca(root, a, b);
+        if(ans == null) return -1;
+        return ans.data;
+	}
+
 
     public static toLinkedlist bstToLL(BinaryTreeNode<Integer> root) {
         if(root == null) {
