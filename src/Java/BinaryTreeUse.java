@@ -45,20 +45,24 @@ public class BinaryTreeUse {
 		* Return output and don't print it.
 		* Taking input and printing output is handled automatically.
 		*/
-        if(root == null) {
-            return null;
-        }
-        if(root.data == data ) {
-            ArrayList<Integer> list = new ArrayList<>();
-            list.add(root.data);
-            return list;
-        }
-        
+		if(root == null) return null;
+		if(root.data == data) {
+			ArrayList<Integer> ans = new ArrayList<>();
+			ans.add(data);
+			return ans;
+		}
+		ArrayList<Integer> left = getPath(root.left, data);
+		if(left != null) {
+			left.add(root.data);
+			return left;
+		}
+		ArrayList<Integer> right = getPath(root.right, data);
+		if(right != null) {
+			right.add(root.data);
+			return right;
+		}
+		return null;
 
-        ArrayList<Integer> left = getPath(root.left, data);
-        if(left != null) {
-            
-        }
 	}
 
     public static BalancedImproved imporvedBalanced(BinaryTreeNode<Integer> root) {
