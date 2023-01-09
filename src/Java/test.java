@@ -3,6 +3,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 class test {
+	public static void checkConsonant(String s) {
+        char ch = 'i';
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' )
+            System.out.println(ch + " is vowel");
+        else
+            System.out.println(ch + " is consonant");
+
+	}
     public static String[] subsequences(String s) {
 		if(s.length() == 0 ) {
 			String[] str = {""};
