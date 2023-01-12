@@ -17,12 +17,12 @@ public class keypad {
                 k++;
             }
         }
-        return output;
-    }
-    public static void main(String ...args) {
-        String[] output = keyword(123);
         for(int i=0; i<output.length; i++) {
             System.out.println(output[i]);
         }
+        return output;
+    }
+    public static void main(String ...args) {
+        String[] ans = keyword(23);
     }
 }
