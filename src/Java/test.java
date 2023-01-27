@@ -1,15 +1,12 @@
 package Java;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
 class test {
 	public static void checkConsonant(String s) {
 		for(int i=0; i<s.length(); i++) {
 			char ch = s.charAt(i);
         	if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' )
-            System.out.println(ch + " is vowel");
+            System.out.println(ch);
         else
-            System.out.println(ch + " is consonant");
+            System.out.println(ch);
 		} 
 
 	}
