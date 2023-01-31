@@ -5,7 +5,7 @@ public class hashMap {
         HashMap<String, Integer> m = new HashMap<>();
         m.put("abc",1);
         if(m.containsKey("abc")) {
-            System.out.println("abc present")
+            System.out.println("abc present");
         }
         //null pointer exception
         int v1 = m.get("abc3");
