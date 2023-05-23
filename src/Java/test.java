@@ -1,41 +1,59 @@
 package Java;
-class test {
-	public static void checkConsonant(String s) {
-		for(int i=0; i<s.length(); i++) {
-			char ch = s.charAt(i);
-        	if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' )
-            System.out.println(ch);
-        else
-            System.out.println(ch);
+
+public class test {
+	public static LinkedListNode<Integer> middle(LinkedListNode<Integer> start, LinkedListNode<Integer> end) {
+		if(start == null || start.next == null|| start == end) return start;
+		LinkedListNode<Integer> slow = start, fast = start.next;
+		while(fast != end && fast.next != end) {
+			slow = slow.next;
+			fast = fast.next.next;
 		} 
+		return null;
+    }
 
-	}
-    public static String[] subsequences(String s) {
-		if(s.length() == 0 ) {
-			String[] str = {""};
-			return str;
-		}
-		String[] smOutput = subsequences(s.substring(1));
-		String output[] = new String [smOutput.length * 2];
-		for(int i=0; i<smOutput.length; i++) {
-			output[i] = smOutput[i];
-		}
-		for(int i=0; i<smOutput.length; i++) {
-			output[i + smOutput.length] = s.charAt(0) + smOutput[i];
-		}
+    public static LinkedListNode<Integer> merge(LinkedListNode<Integer> head1, LinkedListNode<Integer> head2) {
+        if(head1 == null) return head2;
+        if(head2 == null) return head1;
 
-		return output;
-
-	}
-	public static String[] keypad(int n){
-		// Write your code here
-		String ans[] = subsequences("abc");
-		return ans;
-	}
-    public static void main(String ...args) {
-        String[] ans = keypad(10);
-        for(int i=0; i<ans.length; i++) {
-            System.out.print(ans[i] + " ");
+        LinkedListNode<Integer> head, tail;
+        if(head1.data < head2.data) {
+            head = head1;
+            head1 = head1.next;
+        }else{
+            head = head2;
+            head2 = head2.next;
         }
-    } 
+        tail = head;
+
+        while(head1 != null && head2 != null) {
+            if(head1.data < head2.data) {
+                LinkedListNode<Integer> temp = new LinkedListNode<>(head1.data);
+                tail.next = temp;
+                tail = tail.next;
+            }else{
+                LinkedListNode<Integer> temp = new LinkedListNode<>(head2.data);
+                tail.next = temp;
+                tail = tail.next;
+            }
+        }
+        if(head1 != null) tail.next = head1;
+        if(head2 != null) tail.next = head2;
+        return head;
+    }
+
+	public static LinkedListNode<Integer> sortList(LinkedListNode<Integer> start, LinkedListNode<Integer> end) {
+		if(start == end) return null;
+		LinkedListNode<Integer> mid = middle(start, end);
+		LinkedListNode<Integer> left = sortList(start, mid);
+		LinkedListNode<Integer> right = sortList(mid.next, end);
+		return merge(left, right);
+
+	}
+	public static LinkedListNode<Integer> mergeSort(LinkedListNode<Integer> head) {
+		//Your code goes here
+		return null;
+	}
+	
+
+
 }
