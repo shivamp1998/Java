@@ -8,6 +8,7 @@ public class allSubarrays {
 		}
         int num = input[index];
         int ans[][] = {{}};
+        System.out.println(ans);
         return ans;
     }
 	public static int[][] subsetsSumK(int input[], int k) {
