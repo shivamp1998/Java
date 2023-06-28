@@ -177,13 +177,16 @@ public class BinaryTreeUse {
     public static BinaryTreeNode<Integer> takeInputBad() {
         Scanner sc = new Scanner(System.in);
         int data = sc.nextInt();
-        if (data == -1)
+        if (data == -1){
+            sc.close();
             return null;
+        }
         BinaryTreeNode<Integer> rootData = new BinaryTreeNode<Integer>(data);
         BinaryTreeNode<Integer> left = takeInputBad();
         BinaryTreeNode<Integer> right = takeInputBad();
         rootData.left = left;
         rootData.right = right;
+        sc.close();
         return rootData;
     }
 
