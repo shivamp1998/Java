@@ -9,7 +9,7 @@ public class bubbleSort {
         }
         return count;
     }
-    public static LinkedListNode<Integer> bubbleSort(LinkedListNode<Integer> head) {
+    public static LinkedListNode<Integer> bubbleSortMethod(LinkedListNode<Integer> head) {
         for(int i = 0 ; i < length(head) - 1 ; i++) {
             LinkedListNode<Integer> prev = null, curr = head, next = head.next;
             while(curr.next != null) {
@@ -20,10 +20,15 @@ public class bubbleSort {
                         prev = head;
                         head = prev;
                     }else{
-
+                        next = curr.next;
+                        curr.next = next.next;
+                        prev.next = next;
+                        next.next = curr;
+                        prev = next;
                     }
                 }else{
-
+                    prev = curr;
+                    curr = curr.next;
                 }
             }
         }
