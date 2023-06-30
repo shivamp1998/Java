@@ -20,15 +20,16 @@ public class mat {
 
     public static mat multiply(mat a, mat b) {
         if(a.matrix[0].length != b.matrix.length) return null;
+        return a;
         
     }
 
     public static mat transpose(mat m) {
-
+        return m;
     }
 
     public static mat rotate(mat m) {
-
+        return m;
     }
 
     public void print() {
