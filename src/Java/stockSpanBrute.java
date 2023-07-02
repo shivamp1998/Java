@@ -21,7 +21,7 @@ public class stockSpanBrute {
 
 	public static int[] stockSpanStack(int[] price) {
 		int span[] = new int[price.length];
-		Stack<Integer> st = new Stack();
+		Stack<Integer> st = new Stack<>();
 		for (int i=0; i<price.length; i++) {
 			while(!st.isEmpty() && price[st.peek()] < price[i]) {
 				st.pop();
