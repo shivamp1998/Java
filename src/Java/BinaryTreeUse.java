@@ -121,7 +121,29 @@ public class BinaryTreeUse {
 
         
         return null;
-    }   
+    }
+
+
+
+    public static boolean checkBalanced(BinaryTreeNode<Integer> root) {
+        if(root == null) return true;
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+        if(Math.abs(leftHeight - rightHeight) > 1) return false;
+        boolean left = checkBalanced(root.left);
+        boolean right = checkBalanced(root.right);
+        return left && right;
+    }
+    
+    public static BinaryTreeNode<Integer> removeLeaf(BinaryTreeNode<Integer> root) {
+        if(root == null) return null;
+        if(root.left == null && root.right == null) {
+            return null;   
+        }
+        root.left = removeLeaf(root.left);
+        root.right = removeLeaf(root.right);
+        return root;
+    }
 
     public static BinaryTreeNode<Integer> buildTree(int[] preOrder, int[] inOrder) {
         BinaryTreeNode<Integer> root = helper(preOrder, inOrder, 0, inOrder.length - 1, 0);
