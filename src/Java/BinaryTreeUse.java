@@ -104,24 +104,7 @@ public class BinaryTreeUse {
         return null;
 	}
 
-    public static BinaryTreeNode<Integer> helper(int[] preOrder, int[] inOrder, int i, int j, int start) {
-        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(preOrder[start]);
-        if(i > j) {
-            return root;
-        }
-        int index = -1;
-        int count = 1;
-        for(int p=i; i<=j; i++) {
-            if(preOrder[start] == inOrder[p]){
-                index = p;
-                break;
-            }
-            count++;
-        }
-
-        
-        return null;
-    }
+    
 
 
 
