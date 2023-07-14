@@ -128,10 +128,6 @@ public class BinaryTreeUse {
         return root;
     }
 
-    public static BinaryTreeNode<Integer> buildTree(int[] preOrder, int[] inOrder) {
-        BinaryTreeNode<Integer> root = helper(preOrder, inOrder, 0, inOrder.length - 1, 0);
-        return root;
-    }
 
     public static BinaryTreeNode<Integer> takeInput() {
         Queue<BinaryTreeNode<Integer>> q = new LinkedList<BinaryTreeNode<Integer>>();
