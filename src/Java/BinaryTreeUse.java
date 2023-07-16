@@ -150,13 +150,6 @@ public class BinaryTreeUse {
         return root;
     }
 
-    public static int largest(BinaryTreeNode<Integer> root) {
-        if(root == null) return -1;
-        int largeLeft = largest(root.left);
-        int largeRight = largest(root.right);
-        return Math.max(root.data, Math.max(largeLeft, largeRight));
-    }
-
     public static void printNodedepthK(BinaryTreeNode<Integer> root, int k) {
         if(root == null) return;
         if(k == 0) {
