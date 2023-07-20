@@ -152,13 +152,24 @@ public class BinaryTreeUse {
         return root;
     }
 
-    public static int largest(BinaryTreeNode<Integer> root) {
-        if (root == null)
-            return -1;
-        int largeLeft = largest(root.left);
-        int largeRight = largest(root.right);
-        return Math.max(root.data, Math.max(largeLeft, largeRight));
+    public static void printNodedepthK(BinaryTreeNode<Integer> root, int k) {
+        if(root == null) return;
+        if(k == 0) {
+            System.out.print(root.data);
+            return;
+        }
+        printNodedepthK(root.left, k-1);
+        printNodedepthK(root.right, k-1);
     }
+
+    public static void replaceWithDepth(BinaryTreeNode<Integer> root, int k) {
+        if (root == null) return;
+        root.data = k;
+        replaceWithDepth(root.left, k+1);
+        replaceWithDepth(root.right, k + 1);
+    }
+
+    
 
     public static void printLevelWise(BinaryTreeNode<Integer> root) {
         if (root == null)
