@@ -39,32 +39,34 @@ public class BinaryTreeUse {
         return isLeftBalanced && isRightBalanced;
     }
 
-    public static ArrayList<Integer> getPath(BinaryTreeNode<Integer> root, int data){
-		/* Your class should be named Solution
-		* Don't write main().
-		* Don't read input, it is passed as function argument.
-		* Return output and don't print it.
-		* Taking input and printing output is handled automatically.
-		*/
-		if(root == null) return null;
-		if(root.data == data) {
-			ArrayList<Integer> ans = new ArrayList<>();
-			ans.add(data);
-			return ans;
-		}
-		ArrayList<Integer> left = getPath(root.left, data);
-		if(left != null) {
-			left.add(root.data);
-			return left;
-		}
-		ArrayList<Integer> right = getPath(root.right, data);
-		if(right != null) {
-			right.add(root.data);
-			return right;
-		}
-		return null;
+    public static ArrayList<Integer> getPath(BinaryTreeNode<Integer> root, int data) {
+        /*
+         * Your class should be named Solution
+         * Don't write main().
+         * Don't read input, it is passed as function argument.
+         * Return output and don't print it.
+         * Taking input and printing output is handled automatically.
+         */
+        if (root == null)
+            return null;
+        if (root.data == data) {
+            ArrayList<Integer> ans = new ArrayList<>();
+            ans.add(data);
+            return ans;
+        }
+        ArrayList<Integer> left = getPath(root.left, data);
+        if (left != null) {
+            left.add(root.data);
+            return left;
+        }
+        ArrayList<Integer> right = getPath(root.right, data);
+        if (right != null) {
+            right.add(root.data);
+            return right;
+        }
+        return null;
 
-	}
+    }
 
     public static BalancedImproved imporvedBalanced(BinaryTreeNode<Integer> root) {
         if (root == null) {
@@ -86,12 +88,13 @@ public class BinaryTreeUse {
 
     }
 
-    public static BinaryTreeNode<Integer> postHelper(int postOrder[], int [] inOrder, int i, int j, int k, int l) {
-        if(i > j) return null;
-        BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(postOrder[j]); 
+    public static BinaryTreeNode<Integer> postHelper(int postOrder[], int[] inOrder, int i, int j, int k, int l) {
+        if (i > j)
+            return null;
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(postOrder[j]);
         int inStartLeft = 0, inStartRight = 0;
         int inEndLeft = 0, inEndRight = 0;
-        int postStartLeft = 0 , postStartRight = 0;
+        int postStartLeft = 0, postStartRight = 0;
         int postEndLeft = 0, postEndRight = 0;
         root.left = postHelper(postOrder, inOrder, postStartLeft, postEndLeft, inStartLeft, inEndLeft);
         root.right = postHelper(postOrder, inOrder, postStartRight, postEndRight, inStartRight, inEndRight);
@@ -100,40 +103,38 @@ public class BinaryTreeUse {
     }
 
     public static BinaryTreeNode<Integer> buildTreePost(int[] postOrder, int[] inOrder) {
-		//Your code goes here
+        // Your code goes here
         return null;
-	}
-
-    
-
-
+    }
 
     public static boolean checkBalanced(BinaryTreeNode<Integer> root) {
-        if(root == null) return true;
+        if (root == null)
+            return true;
         int leftHeight = height(root.left);
         int rightHeight = height(root.right);
-        if(Math.abs(leftHeight - rightHeight) > 1) return false;
+        if (Math.abs(leftHeight - rightHeight) > 1)
+            return false;
         boolean left = checkBalanced(root.left);
         boolean right = checkBalanced(root.right);
         return left && right;
     }
-    
+
     public static BinaryTreeNode<Integer> removeLeaf(BinaryTreeNode<Integer> root) {
-        if(root == null) return null;
-        if(root.left == null && root.right == null) {
-            return null;   
+        if (root == null)
+            return null;
+        if (root.left == null && root.right == null) {
+            return null;
         }
         root.left = removeLeaf(root.left);
         root.right = removeLeaf(root.right);
         return root;
     }
 
-
     public static BinaryTreeNode<Integer> takeInput() {
         Queue<BinaryTreeNode<Integer>> q = new LinkedList<BinaryTreeNode<Integer>>();
         Scanner sc = new Scanner(System.in);
         BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(sc.nextInt());
-        
+
         q.add(root);
         while (!q.isEmpty()) {
             BinaryTreeNode<Integer> node = q.poll();
@@ -152,41 +153,42 @@ public class BinaryTreeUse {
     }
 
     public static int largest(BinaryTreeNode<Integer> root) {
-        if(root == null) return -1;
+        if (root == null)
+            return -1;
         int largeLeft = largest(root.left);
         int largeRight = largest(root.right);
         return Math.max(root.data, Math.max(largeLeft, largeRight));
     }
 
     public static void printLevelWise(BinaryTreeNode<Integer> root) {
-		if(root == null) return;
+        if (root == null)
+            return;
         Queue<BinaryTreeNode<Integer>> q = new LinkedList<BinaryTreeNode<Integer>>();
         q.add(root);
         System.out.println(root.data);
-        while(!q.isEmpty()) {
+        while (!q.isEmpty()) {
             int size = q.size();
-            while(size > 0) {
+            while (size > 0) {
                 BinaryTreeNode<Integer> front = q.poll();
-                if(front.left != null) {
+                if (front.left != null) {
                     System.out.print(front.left.data + " ");
                     q.add(front.left);
                 }
-                if(front.right != null) {
+                if (front.right != null) {
                     System.out.print(front.right.data + " ");
-                    q.add(front.right);  
+                    q.add(front.right);
                 }
-                size--; 
+                size--;
             }
             System.out.println();
         }
-		
-	}
 
+    }
 
     public static BinaryTreeNode<Integer> takeInputBad() {
         Scanner sc = new Scanner(System.in);
         int data = sc.nextInt();
-        if (data == -1){
+        if (data == -1) {
             sc.close();
             return null;
         }
