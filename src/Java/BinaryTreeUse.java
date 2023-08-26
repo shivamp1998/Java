@@ -68,6 +68,16 @@ public class BinaryTreeUse {
 
     }
 
+    public static int diameterOfTree(BinaryTreeNode<Integer> root) {
+        if(root == null) return 0;
+        int diaLeft = diameterOfTree(root.left);
+        int diaRight = diameterOfTree(root.right);
+        int heightLeft = height(root.left);
+        int heightRight = height(root.right);
+        int dia = heightLeft + heightRight;
+        return 1 + Math.max(dia, Math.max(diaLeft, diaRight));
+    }
+
     public static BalancedImproved imporvedBalanced(BinaryTreeNode<Integer> root) {
         if (root == null) {
             BalancedImproved ans = new BalancedImproved(0, true);
