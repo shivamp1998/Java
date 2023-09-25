@@ -4,7 +4,7 @@ public class isBst {
         if(root == null) {
             return Integer.MIN_VALUE;
         }
-        return Math.max(root.data, Math.max(largest(root.left), largest(root.right)))
+        return Math.max(root.data, Math.max(largest(root.left), largest(root.right)));
     }
     public static int smallest(BinaryTreeNode<Integer> root) {
         if(root == null) 
@@ -41,7 +41,7 @@ public class isBst {
 
     public static boolean isBstImproved(BinaryTreeNode<Integer> root) {
         isBstReturn a = new isBstReturn(Integer.MIN_VALUE, Integer.MAX_VALUE, true);
-        isBstReturn b = improvedBsthelper(root, a);
+        isBstReturn b = improvedBsthelper(root);
         return b.isBst;
     }   
 
