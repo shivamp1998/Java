@@ -1,3 +1,4 @@
+package Java;
 public class lcaBinaryTree {
     public static BinaryTreeNode<Integer> lcaHelper(BinaryTreeNode<Integer> root, int a, int b) {
 		if(root.data == a || root.data == b || root == null) return root;
