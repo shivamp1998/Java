@@ -6,7 +6,6 @@ public class allSubarrays {
             int arr[][] = {{}};
 			return arr;
 		}
-        int num = input[index];
         int ans[][] = {{}};
         System.out.println(ans);
         return ans;

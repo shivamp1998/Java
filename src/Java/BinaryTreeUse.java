@@ -1,7 +1,6 @@
 package Java;
 
 import java.util.*;
-import java.lang.*;
 
 public class BinaryTreeUse {
 
@@ -159,6 +158,7 @@ public class BinaryTreeUse {
                 q.add(node.right);
             }
         }
+        sc.close();
         return root;
     }
 

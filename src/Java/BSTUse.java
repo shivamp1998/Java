@@ -70,6 +70,7 @@ public class BSTUse {
                 q.add(node.right);
             }
         }
+        sc.close();
         return root;
     }
     public static void print(BinaryTreeNode<Integer> root) {

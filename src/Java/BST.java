@@ -1,7 +1,6 @@
 package Java;
 public class BST {
     private BinaryTreeNode<Integer> root;
-    private int size = 0;
 
     public BinaryTreeNode<Integer> insertHelper(BinaryTreeNode<Integer> root, int data) {
         if (root == null)
