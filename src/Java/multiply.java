@@ -15,5 +15,6 @@ public class multiply {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(multiple(n, 1));
+        sc.close();
     }
 }
