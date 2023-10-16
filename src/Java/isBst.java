@@ -40,7 +40,6 @@ public class isBst {
     }
 
     public static boolean isBstImproved(BinaryTreeNode<Integer> root) {
-        isBstReturn a = new isBstReturn(Integer.MIN_VALUE, Integer.MAX_VALUE, true);
         isBstReturn b = improvedBsthelper(root);
         return b.isBst;
     }   

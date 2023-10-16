@@ -8,7 +8,6 @@ public class hashMap {
             System.out.println("abc present");
         }
         //null pointer exception
-        int v1 = m.get("abc3");
         System.out.println(m.size());
     }
 }

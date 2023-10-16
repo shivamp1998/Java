@@ -44,6 +44,7 @@ public class GenericTreeTest {
                 q.add(node);
             }
         }
+        sc.close();
         return root;
     }
 

@@ -25,6 +25,7 @@ public class fibonnaciDp {
         int [] dp = new int [n+1];
         for(int i=0; i<=n; i++) dp[i] = -1;
         System.out.print(fibonnaci(dp, n));
+        sc.close();
         
     }    
 }

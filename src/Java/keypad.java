@@ -23,6 +23,5 @@ public class keypad {
         return output;
     }
     public static void main(String ...args) {
-        String[] ans = keyword(23);
     }
 }

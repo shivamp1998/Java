@@ -20,5 +20,6 @@ public class minCountSquares {
         int dp[] = new int [n+1];
         for(int i=0; i<dp.length; i++) dp[i] = -1;
         System.out.print(minSquare(n, dp));
+        sc.close();
     }
 }
