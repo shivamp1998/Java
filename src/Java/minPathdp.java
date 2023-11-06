@@ -4,6 +4,9 @@ public class minPathdp {
 		if(i >= input.length && j >= input[0].length) {
 			return Integer.MIN_VALUE;
 		}
+		if(i == input.length - 1 && j == input[0].length - 1) {
+			return input[i][j];
+		}
 		int ans1, ans2, ans3;
 		if(dp[i+1][j] != Integer.MIN_VALUE) {
 			ans1 =  dp[i+1][j];
