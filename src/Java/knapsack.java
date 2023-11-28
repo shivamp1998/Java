@@ -32,7 +32,7 @@ public class knapsack {
         return dp[0][w];
     }
 
-	public static int knapsack(int[] weights, int[] values, int n, int maxWeight) {
+	public static int knapsackCalc(int[] weights, int[] values, int n, int maxWeight) {
 		return helper(weights, values, n, maxWeight, 0);
 	}
 }
