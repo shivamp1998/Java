@@ -1,3 +1,6 @@
+package Java;
+import java.util.*;
+
 public class BuyTicket {
     public static int buyTicket(int input[], int k) {
 		PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
