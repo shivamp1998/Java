@@ -5,7 +5,7 @@ import java.util.*;
 public class pairSum {
 	public static int PairSum(int[] input, int size) {
 		int count = 0;
-		HashMap<Integer, Integer> m = new HashMap();
+		HashMap<Integer, Integer> m = new HashMap<>();
 		for (int i = 0; i < input.length; i++) {
 			if (m.containsKey(input[i])) {
 				m.put(input[i], m.get(input[i]) + 1);
