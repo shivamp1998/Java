@@ -1,6 +1,6 @@
 package Java;
 
-public class splitArray {
+public class SplitArray {
     public static boolean splitArray(int[] input, int group1, int group2, int index) {
         if(input.length == index) {
             if(group1 == group2) return true;
