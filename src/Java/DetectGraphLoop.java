@@ -1,4 +1,4 @@
-import java.util.*;
+package Java;
 
 public class DetectGraphLoop {
 
@@ -30,7 +30,6 @@ public class DetectGraphLoop {
 	{
 		boolean visited[][] = new boolean[n][m];
 		boolean ans = false;
-		int count = 0;
 		for(int i=0; i<n; i++) 	{
 			for(int j=0; j<m; j++) {
 				if(!visited[i][j]) {
